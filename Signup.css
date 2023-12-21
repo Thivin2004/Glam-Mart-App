@@ -1,17 +1,17 @@
 .signup-container {
-    position: relative;
-    max-width: 700px;
-    margin: 60px auto;
-    padding: 60px;
-    border: 2px solid #e94141;
-    background-color: #e2f2d2;
-    border-radius: 110px;
-    box-shadow: 0 0 10px rgba(126, 35, 246, 0.584);
-}
+  max-width: 500px;
+  margin: auto;
+  padding: 50px;
+  border: 7px solid #ccc;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(228, 233, 196, 0.493);
+  margin-top: 40px;
+  }
   
   .signup-container h2 {
     text-align: center;
-    color: #6e47e3;
+    color: #333;
   }
   
   form {
@@ -21,14 +21,16 @@
   
   label {
     margin-bottom: 8px;
-    color: #0a150a;
+    color: #333;
   }
   
   input {
-    padding: 10px;
+    padding: 16px;
     margin-bottom: 16px;
-    border: 2px solid #e2ece7;
-    border-radius: 9px;
+    border: 1px solid #50d7a8;
+    border-radius: 4px;
+    width: 250px;
+    height:20px;
   }
   
   button {
@@ -36,12 +38,12 @@
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     cursor: pointer;
   }
   
   button:hover {
-    background-color: #64a2e5;
+    background-color: #0056b3;
   }
   
   
@@ -53,7 +55,11 @@
     height: 100px; 
     border-radius: 50%;
     border: 2px solid #fff;
-    box-shadow: 0 0 10px rgba(213, 39, 39, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     z-index: 1; 
   }
-   
+  .signup-complete {
+    margin-top: 20px; /* Adjust this value as needed for the desired space */
+    /* Additional styling for the Signup Complete section */
+  }
+  

@@ -1,31 +1,40 @@
 import React, { useState } from 'react';
-import './Login.css'; 
-
-const Login = () => {
+import { FaGoogle, FaFacebook } from 'react-icons/fa'; 
+import './Login.css';
+const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    if (!username) {
-      alert('Please fill in the correct username');
-    } 
-    else if (!password) {
-      alert('Please fill in the correct password');
-    }
-    console.log('Username:', username);
-    console.log('Password:', password);
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users.find((u) => u.username === username && u.password === password);
 
+    if (user) {
+      alert('Login successful');
+      onLogin(user); 
+    } else {
+      alert('Invalid username or password');
+    }
+  };
+
+  const handleGoogleLogin = () => {
+    
+alert('Login with Google');
+  };
+
+  const handleFacebookLogin = () => {
+   alert('Login with Facebook');
   };
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
+      <h1>Login</h1>
       <form>
         <label htmlFor="username">Username:</label>
         <input
           type="text"
-          id="username"
-          placeholder='Enter your username'
+          className="username"
+          placeholder="Enter your username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
@@ -33,22 +42,23 @@ const Login = () => {
         <label htmlFor="password">Password:</label>
         <input
           type="password"
-          id="password"
-          placeholder='Enter your password'
+          className="password"
+          placeholder="Enter your Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <br />
+
         <button type="button" onClick={handleLogin}>
-        Login
+          Login
         </button>
-        <br></br>
-        <label htmlFor="username">Forget Password?</label>
-        
-       
-        <label htmlFor="username">Create a new account<a href="">Signup</a>
-        </label>
-        
+<p>Forget password?<a href=''>Reset your password</a></p>
+        <button type="button" className="google-login-btn" onClick={handleGoogleLogin}>
+          <FaGoogle /> Login with Google
+        </button>
+<br></br>
+        <button type="button" className="facebook-login-btn" onClick={handleFacebookLogin}>
+          <FaFacebook /> Login with Facebook
+        </button>
       </form>
     </div>
   );
